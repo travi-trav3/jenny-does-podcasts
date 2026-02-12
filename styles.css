@@ -212,6 +212,7 @@ a {
   justify-content: center;
   align-items: center;
   height: 60px;
+  margin-top: 2.5rem;
   background: var(--color-white);
   color: var(--color-accent);
   opacity: 0.2;
@@ -231,7 +232,7 @@ a {
   width: 280px;
   height: auto;
   color: var(--color-accent);
-  opacity: 0.15;
+  opacity: 0.08;
   pointer-events: none;
 }
 
