@@ -209,7 +209,7 @@ a {
   height: 60px;
   background: var(--color-white);
   color: var(--color-accent);
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 .deco-waveform svg {
@@ -226,14 +226,14 @@ a {
   width: 280px;
   height: auto;
   color: var(--color-accent);
-  opacity: 0.05;
+  opacity: 0.15;
   pointer-events: none;
 }
 
 .deco-waveform--sm {
   margin-bottom: 1.5rem;
   color: var(--color-white);
-  opacity: 0.12;
+  opacity: 0.22;
 }
 
 .deco-waveform--sm svg {
