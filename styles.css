@@ -397,9 +397,13 @@ a {
   margin-left: auto;
 }
 
+.hero .label {
+  font-size: 0.9375rem;
+}
+
 .hero__heading {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.625rem, 5.25vw, 3.675rem);
   font-weight: 400;
   line-height: 1.15;
   color: var(--color-charcoal);
@@ -407,7 +411,7 @@ a {
 }
 
 .hero__description {
-  font-size: 1.05rem;
+  font-size: 1.155rem;
   line-height: 1.7;
   color: var(--color-gray-600);
   margin-bottom: 2rem;
