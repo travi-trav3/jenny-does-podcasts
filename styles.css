@@ -611,8 +611,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   padding: 1.5rem;
   opacity: 0;
   transition: opacity var(--duration-normal) var(--ease-out);
@@ -961,8 +961,8 @@ a {
     background: var(--color-dark);
     padding: 1.25rem;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .portfolio__card-artwork {
