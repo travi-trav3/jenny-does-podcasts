@@ -554,9 +554,8 @@ a {
 
 .testimonials__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  max-width: 900px;
 }
 
 .testimonials__card {
@@ -697,7 +696,7 @@ a {
   }
 
   .testimonials__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 }
 
