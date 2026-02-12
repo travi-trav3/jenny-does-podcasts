@@ -54,11 +54,11 @@
       <div class="hero__stats-inner reveal-group">
         <div class="stats__item reveal">
           <span class="stats__number">$1M+</span>
-          <span class="stats__label">Ad Revenue Generated</span>
+          <span class="stats__label">Ad Revenue Sold</span>
         </div>
         <div class="stats__item reveal">
-          <span class="stats__number">5M+</span>
-          <span class="stats__label">Listens</span>
+          <span class="stats__number">6.7M+</span>
+          <span class="stats__label">Total Downloads</span>
         </div>
         <div class="stats__item reveal">
           <span class="stats__number">86%</span>
@@ -336,18 +336,20 @@
         if (!entry.isIntersecting) return;
         entry.target.querySelectorAll('.stats__number').forEach(el => {
           const text = el.textContent.trim();
-          const match = text.match(/^(\$?)(\d+)(.*)/);
+          const match = text.match(/^(\$?)(\d+\.?\d*)(.*)/);
           if (!match) return;
           const prefix = match[1];
-          const target = parseInt(match[2]);
+          const target = parseFloat(match[2]);
           const suffix = match[3];
+          const decimals = match[2].includes('.') ? match[2].split('.')[1].length : 0;
           const duration = 2000;
           const start = performance.now();
-          el.textContent = prefix + '0' + suffix;
+          el.textContent = prefix + (0).toFixed(decimals) + suffix;
           (function update(now) {
             const progress = Math.min((now - start) / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
-            el.textContent = prefix + Math.round(eased * target) + suffix;
+            const current = eased * target;
+            el.textContent = prefix + (decimals ? current.toFixed(decimals) : Math.round(current)) + suffix;
             if (progress < 1) requestAnimationFrame(update);
           })(start);
         });
