@@ -370,6 +370,11 @@ a {
   max-width: 440px;
 }
 
+.hero__accent {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
 .hero__buttons {
   display: flex;
   gap: 1rem;
