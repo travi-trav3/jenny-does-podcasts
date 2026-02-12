@@ -650,11 +650,15 @@ a {
   font-size: 0.8rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
+  padding-left: 1rem;
+  position: relative;
   margin-bottom: 0.3rem;
 }
 
 .portfolio__card-list li::before {
-  content: '\2022  ';
+  content: '\2022';
+  position: absolute;
+  left: 0;
   color: rgba(255, 255, 255, 0.5);
 }
 
