@@ -50,7 +50,7 @@
     <div class="hero__stats">
       <div class="hero__stats-inner reveal-group">
         <div class="stats__item reveal">
-          <span class="stats__number">$1M+</span>
+          <span class="stats__number" data-count-from="750" data-count-to="1000" data-prefix="$" data-suffix="K+">$750K+</span>
           <span class="stats__label">Ad Revenue Sold</span>
         </div>
         <div class="stats__item reveal">
@@ -259,7 +259,17 @@
       <span class="label label--light">LET'S CONNECT</span>
       <h2 class="contact__heading">Let's look at what your show is really worth.</h2>
       <p class="contact__text">Whether you're launching something new or looking to level up an existing podcast, I'd love to chat about how we can work together to make it happen.</p>
-      <a href="mailto:hello@jennydoespodcasts.com" class="btn btn--white">Book a Call</a>
+      <form class="contact__form" action="https://formsubmit.co/jennybarber0523@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from jennydoespodcasts.com">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none">
+        <div class="contact__form-row">
+          <input type="text" name="name" placeholder="Your Name" required class="contact__input">
+          <input type="email" name="email" placeholder="Your Email" required class="contact__input">
+        </div>
+        <textarea name="message" placeholder="Tell me about your project..." rows="4" required class="contact__input contact__textarea"></textarea>
+        <button type="submit" class="btn btn--white">Contact Me</button>
+      </form>
     </div>
   </section>
 
@@ -268,9 +278,9 @@
     <div class="footer__inner">
       <span class="footer__brand">Jenny Does Podcasts</span>
       <div class="footer__links">
-        <a href="#" class="footer__link">LinkedIn</a>
-        <a href="#" class="footer__link">Stan Store</a>
-        <a href="mailto:hello@jennydoespodcasts.com" class="footer__link">Email</a>
+        <a href="https://www.linkedin.com/in/jennynbarber/" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
+        <a href="http://stan.store/jennybarber" target="_blank" rel="noopener noreferrer" class="footer__link">Stan Store</a>
+        <a href="mailto:jennybarber0523@gmail.com" class="footer__link">Email</a>
       </div>
     </div>
   </footer>
@@ -332,6 +342,28 @@
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.querySelectorAll('.stats__number').forEach(el => {
+          // Check for custom range (revenue stat)
+          if (el.dataset.countFrom) {
+            const from = parseFloat(el.dataset.countFrom);
+            const to = parseFloat(el.dataset.countTo);
+            const prefix = el.dataset.prefix || '';
+            const suffix = el.dataset.suffix || '';
+            const duration = 2000;
+            const start = performance.now();
+            el.textContent = prefix + Math.round(from) + suffix;
+            (function update(now) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const current = from + eased * (to - from);
+              if (progress >= 1) {
+                el.textContent = '$1M+';
+              } else {
+                el.textContent = prefix + Math.round(current) + suffix;
+              }
+              if (progress < 1) requestAnimationFrame(update);
+            })(start);
+            return;
+          }
           const text = el.textContent.trim();
           const match = text.match(/^(\$?)(\d+\.?\d*)(.*)/);
           if (!match) return;

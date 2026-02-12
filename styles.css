@@ -814,6 +814,53 @@ a {
   margin-bottom: 2.5rem;
 }
 
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact__input {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.875rem 1rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out);
+  outline: none;
+  width: 100%;
+}
+
+.contact__input::placeholder {
+  color: var(--color-gray-400);
+}
+
+.contact__input:focus {
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact__form .btn {
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
 /* ===========================
    Footer
    =========================== */
@@ -1014,6 +1061,10 @@ a {
 
   .contact {
     padding: 4rem 1.5rem;
+  }
+
+  .contact__form-row {
+    grid-template-columns: 1fr;
   }
 
   .footer__inner {
