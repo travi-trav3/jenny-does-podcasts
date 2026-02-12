@@ -2,23 +2,46 @@
    CSS Custom Properties
    =========================== */
 :root {
+  /* Accent — Terracotta */
+  --color-accent: #C2714F;
+  --color-accent-hover: #A85D3F;
+  --color-accent-light: #F3E8E2;
+  --color-accent-glow: rgba(194, 113, 79, 0.15);
+
+  /* Neutrals */
+  --color-black: #1A1A1A;
+  --color-white: #FFFFFF;
+  --color-beige: #F5F0EB;
+  --color-gray-700: #555555;
+  --color-gray-300: #CCCCCC;
+
+  /* Legacy neutrals (still referenced) */
   --color-cream: #F5F0EA;
   --color-cream-dark: #EDE7DF;
   --color-charcoal: #2B2B2B;
   --color-dark: #1A1A1A;
-  --color-black: #111111;
-  --color-white: #FFFFFF;
   --color-gray-100: #F8F8F8;
   --color-gray-200: #E8E8E8;
   --color-gray-400: #999999;
   --color-gray-600: #666666;
-  --color-gray-700: #444444;
   --color-text: #333333;
-  --color-text-light: #888888;
 
-  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
+  /* Elevation */
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-reveal: 800ms;
+
+  /* Layout */
   --max-width: 1200px;
   --header-height: 80px;
 }
@@ -38,11 +61,16 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  color: var(--color-text);
+  font-family: var(--font-body);
+  color: var(--color-black);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
 }
 
 img {
@@ -61,7 +89,7 @@ a {
    =========================== */
 .label {
   display: inline-block;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -75,7 +103,7 @@ a {
 }
 
 .section-heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 400;
   line-height: 1.2;
@@ -85,7 +113,7 @@ a {
 
 .btn {
   display: inline-block;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -170,7 +198,7 @@ a {
 }
 
 .header__logo {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.25rem;
   color: var(--color-charcoal);
 }
@@ -261,7 +289,7 @@ a {
 }
 
 .hero__heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 400;
   line-height: 1.15;
@@ -337,7 +365,7 @@ a {
 
 .stats__number {
   display: block;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--color-white);
   margin-bottom: 0.5rem;
@@ -460,7 +488,7 @@ a {
 }
 
 .portfolio__card-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--color-white);
@@ -567,7 +595,7 @@ a {
 }
 
 .testimonials__quote {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.05rem;
   font-style: italic;
   line-height: 1.65;
@@ -607,7 +635,7 @@ a {
 }
 
 .contact__heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 400;
   line-height: 1.2;
@@ -639,7 +667,7 @@ a {
 }
 
 .footer__brand {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1rem;
   color: var(--color-white);
 }
