@@ -199,6 +199,49 @@ a {
   }
 }
 
+/* ===========================
+   Decorative Audio Elements
+   =========================== */
+.deco-waveform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background: var(--color-white);
+  color: var(--color-accent);
+  opacity: 0.1;
+}
+
+.deco-waveform svg {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+}
+
+.deco-mic {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  height: auto;
+  color: var(--color-accent);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.deco-waveform--sm {
+  margin-bottom: 1.5rem;
+  color: var(--color-white);
+  opacity: 0.12;
+}
+
+.deco-waveform--sm svg {
+  width: 120px;
+  height: 24px;
+  display: inline-block;
+}
+
 /* Placeholder for missing images */
 .placeholder {
   background: var(--color-cream-dark);
@@ -464,18 +507,6 @@ a {
 .about {
   padding: 6rem 2rem;
   background: var(--color-white);
-  position: relative;
-}
-
-.about::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 48px;
-  height: 2px;
-  background: var(--color-accent);
 }
 
 .about__inner {
@@ -673,11 +704,15 @@ a {
 .testimonials {
   padding: 6rem 2rem;
   background: var(--color-white);
+  position: relative;
+  overflow: hidden;
 }
 
 .testimonials__inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonials__grid {
@@ -867,6 +902,10 @@ a {
 }
 
 @media (max-width: 768px) {
+  .deco-mic {
+    display: none;
+  }
+
   .portfolio__grid {
     grid-template-columns: 1fr;
     max-width: 400px;
@@ -950,6 +989,10 @@ a {
   .hero__stats-inner {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .deco-waveform {
+    height: 40px;
   }
 
   .about {
