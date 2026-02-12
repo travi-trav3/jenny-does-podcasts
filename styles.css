@@ -391,8 +391,8 @@ a {
 .hero__text {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: clamp(2rem, 6vh, 4rem) 4rem 2rem 2rem;
+  justify-content: center;
+  padding: 2rem 4rem 2rem 2rem;
   max-width: 600px;
   margin-left: auto;
 }
