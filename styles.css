@@ -610,7 +610,9 @@ a {
   background: rgba(0, 0, 0, 0.78);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 1.5rem;
   opacity: 0;
   transition: opacity var(--duration-normal) var(--ease-out);
@@ -648,15 +650,11 @@ a {
   font-size: 0.8rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
-  padding-left: 1rem;
-  position: relative;
   margin-bottom: 0.3rem;
 }
 
 .portfolio__card-list li::before {
-  content: '\2022';
-  position: absolute;
-  left: 0;
+  content: '\2022  ';
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -671,7 +669,6 @@ a {
   background: rgba(255, 255, 255, 0.15);
   padding: 0.4rem 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  align-self: flex-start;
 }
 
 .portfolio__card-desc {
@@ -963,6 +960,9 @@ a {
     opacity: 1;
     background: var(--color-dark);
     padding: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .portfolio__card-artwork {
