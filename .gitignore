@@ -1,0 +1,9 @@
+# MCP memory storage
+memory.jsonl
+
+# Node modules (from MCP server installations)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
