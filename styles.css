@@ -546,6 +546,13 @@ a {
   margin-bottom: 1.25rem;
 }
 
+.about__text--emphasis {
+  font-weight: 600;
+  color: var(--color-gray-900);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
 /* ===========================
    Portfolio
    =========================== */
